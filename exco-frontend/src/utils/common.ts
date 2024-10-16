@@ -13,6 +13,12 @@ export enum RESSTATE {
 }
 
 export class Res {
+    isSuccess() {
+        throw new Error('Method not implemented.');
+    }
+    message(message: any) {
+        throw new Error('Method not implemented.');
+    }
     public status: RESSTATE;
     public msg: string | null;
 
