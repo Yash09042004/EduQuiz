@@ -1,3 +1,4 @@
+import { EDataDynamic } from "../models/exam";
 import { Res, RESSTATE } from "./common";
 
 enum HTTPMETHOD { GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS, TRACE, __UNKNOWN__ }
@@ -41,7 +42,7 @@ export abstract class Fetcher {
 
     public get(subpath: string):     Fetcher { return this.route(subpath, HTTPMETHOD.GET); }
     public post(subpath: string):    Fetcher { return this.route(subpath, HTTPMETHOD.POST); }
-    public put(subpath: string):     Fetcher { return this.route(subpath, HTTPMETHOD.PUT); }
+    public put(subpath: string, newData: EDataDynamic):     Fetcher { return this.route(subpath, HTTPMETHOD.PUT); }
     public delete(subpath: string):  Fetcher { return this.route(subpath, HTTPMETHOD.DELETE); }
     public patch(subpath: string):   Fetcher { return this.route(subpath, HTTPMETHOD.PATCH); }
     public head(subpath: string):    Fetcher { return this.route(subpath, HTTPMETHOD.HEAD); }

@@ -21,15 +21,6 @@ export enum QuesType {
     CHECKBOX = 1
 }
 
-// function checkType(value: any, type: string): boolean {
-//     if(type === 'array')
-//         return Array.isArray(value);
-//     else if(value === null)
-//         return false;
-//     else
-//         return typeof value === type;
-// }
-
 function isValidID(id: any): boolean {
     return typeof id === 'string' && /^[0-9a-fA-F]{24}$/.test(id);
 }
@@ -42,6 +33,7 @@ export class Question {
     public quesType:    QuesType;
     public options:     string[];
     public correct:     number[];
+    type: any;
 
     public constructor(
         _id:         string | null,
@@ -124,6 +116,7 @@ export class ExamData {
 
     state:        ExamDeliveryState;
     stateText:    string;
+    limitedEdit:  boolean | undefined;
 
     private constructor() {
         this.examID      = '';
@@ -150,6 +143,7 @@ export class ExamData {
 
         this.state        = ExamDeliveryState.GEN_EXAM_ERROR;
         this.stateText    = ExamDeliveryState[ExamDeliveryState.GEN_EXAM_ERROR];
+        this.limitedEdit  = undefined;
     }
 
     public static fromJSON(json: any): ExamData {
@@ -186,20 +180,32 @@ export class ExamData {
 
             exam.state        = json.state;
             exam.stateText    = json.stateText;
+            exam.limitedEdit  = json.limitedEdit;
 
             return exam;
         }
     }
 }
 
+
 export interface EDataDynamic {
-    title:       string;
+
+    title: string;
+
     description: string;
+
     windowStart: Date;
-    windowEnd:   Date;
-    duration:    number;
-    clampTime:   boolean;
-    showScores:  boolean;
+
+    windowEnd: Date;
+
+    duration: number;
+
+    clampTime: boolean;
+
+    showScores: boolean;
+
+    questions: Question[]; // Add this line
+
 }
 
 export interface QDataDynamic {

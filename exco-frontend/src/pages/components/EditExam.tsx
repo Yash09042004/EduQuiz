@@ -69,7 +69,7 @@ const EditExam: React.FC<{
           value={desc}
           placeholder="Exam Description (Markdown) - The rendered version will appear above"
           extensions={[markdown({ base: markdownLanguage, codeLanguages: languages })]}
-          onChange={(value, _) => setDesc(value)}
+          onChange={(value: React.SetStateAction<string>, _: any) => setDesc(value)}
         />
         )
       }
@@ -107,13 +107,14 @@ const EditExam: React.FC<{
       <Button type="primary" style={{ marginTop: '10px', float: 'right' }} loading={loaderUpdate}
         onClick={() => {
           onSave({
-            title:       theTitle,
+            title: theTitle,
             description: desc,
             windowStart: winRange.start,
-            windowEnd:   winRange.end,
-            duration:    (hours * 3600000) + (minutes * 60000),
-            clampTime:   clamp,
-            showScores:  scores
+            windowEnd: winRange.end,
+            duration: (hours * 3600000) + (minutes * 60000),
+            clampTime: clamp,
+            showScores: scores,
+            questions: []
           }, setLoaderUpdate);
         }}
         >Save</Button>

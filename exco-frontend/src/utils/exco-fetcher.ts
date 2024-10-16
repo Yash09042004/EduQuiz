@@ -1,9 +1,16 @@
+import { EDataDynamic } from '../models/exam';
 import { Res, RESSTATE } from './common';
 import { Fetcher } from './fetcher';
 
 const REACT_APP_BASE_API_URL = process.env.REACT_APP_BASE_API_URL || undefined;
 
 export class ExcoFetcher extends Fetcher {
+    static updateExam(examID: string, newData: EDataDynamic) {
+        throw new Error('Method not implemented.');
+    }
+    static deleteExam(examID: string) {
+        throw new Error('Method not implemented.');
+    }
     private _needAuth: boolean = false;
     private _noAuth?: (fetcher: ExcoFetcher) => void;
     private _genericHandler?: (fetcher: ExcoFetcher) => void;
