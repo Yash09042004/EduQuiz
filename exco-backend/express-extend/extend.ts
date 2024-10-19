@@ -1,5 +1,3 @@
-// Author: Abrar Mahmud
-// Email: abrar.mahmud@g.bracu.ac.bd
 
 import { Application, Request, Response } from 'express';
 import { Result, PayloadResult } from '../utils/common';

@@ -65,7 +65,7 @@ function NavMenu({ pseudoRoute, selected } : { pseudoRoute?: { title: string, ke
     return (
         <Header className="site-layout-background" style={{ padding: 0, backgroundColor: 'white' }}>
             <div style={{ float: 'left', margin: '0px 24px', height: '100%', fontFamily: 'tesla', fontSize: '30px' }}>
-                EXCO
+                EduQuiz
             </div>
             <div style={{ float: 'right', margin: '0px 16px' }}>
                 {

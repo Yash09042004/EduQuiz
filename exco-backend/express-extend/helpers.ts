@@ -1,5 +1,3 @@
-// Author: Abrar Mahmud
-// Email: abrar.mahmud@g.bracu.ac.bd
 
 import { VREPORT } from "./extend";
 

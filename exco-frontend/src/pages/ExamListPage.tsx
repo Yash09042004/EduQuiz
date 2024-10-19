@@ -78,7 +78,7 @@ const ExamListPage: React.FC = () => {
         <>
             <NavMenu selected="exams" />
             <Content className="contentjam">{toDisplay}</Content>
-            <Footer style={{ textAlign: 'center' }}>Exco ©2022 Created by Abrar Mahmud</Footer>
+            <Footer style={{ textAlign: 'center' }}>EduQuiz ©2024</Footer>
         </>
     );
 };
