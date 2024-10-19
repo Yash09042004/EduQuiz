@@ -143,7 +143,7 @@ const SubListPage: React.FC = () => {
         <>
             <NavMenu pseudoRoute={{ title: 'Submissions', key: 'subs' }} selected="subs" />
             <Content className="contentjam">{toDisplay}</Content>
-            <Footer style={{ textAlign: 'center' }}>Exco ©2022 Created by Abrar Mahmud</Footer>
+            <Footer style={{ textAlign: 'center' }}>EduQuiz ©2024</Footer>
         </>
     );
 };
