@@ -25,6 +25,8 @@ services:
       - JWT_SECRET=$JWT_SECRET
       - PORT=$NODE_DOCKER_PORT
       - COMBINED=FALSE
+    volumes:
+      - ./exco-backend:/usr/src/app
     networks:
       - backend
       - frontend
