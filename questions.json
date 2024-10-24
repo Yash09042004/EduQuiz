@@ -1,203 +1,290 @@
 [
-    {
+  {
       "questionText": "What is the primary purpose of an operating system?",
       "options": ["To manage hardware resources", "To provide a user interface", "To run applications", "All of the above"],
       "correctAnswer": "All of the above",
       "points": 1,
-    "maxAttempts": 1,
-    "questionType": "single"
-
-    },
-    {
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
       "questionText": "Which of the following is not an operating system?",
       "options": ["Windows", "Linux", "Oracle", "MacOS"],
       "correctAnswer": "Oracle",
       "points": 1,
-    "maxAttempts": 1,
-    "questionType": "single"
-    },
-    {
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
       "questionText": "What is a process in an operating system?",
       "options": ["A program in execution", "A program that is stored on disk", "A program that is not running", "None of the above"],
       "correctAnswer": "A program in execution",
       "points": 1,
-    "maxAttempts": 1,
-    "questionType": "single"
-    },
-    {
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
       "questionText": "Which of the following is a type of multitasking?",
       "options": ["Preemptive", "Cooperative", "Both A and B", "None of the above"],
       "correctAnswer": "Both A and B",
       "points": 1,
-    "maxAttempts": 1,
-    "questionType": "single"
-    },
-    {
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
       "questionText": "What is the function of a device driver?",
       "options": ["To manage hardware devices", "To manage software applications", "To manage user accounts", "To manage network connections"],
       "correctAnswer": "To manage hardware devices",
       "points": 1,
-    "maxAttempts": 1,
-    "questionType": "single"
-    },
-    {
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
       "questionText": "What is virtual memory?",
       "options": ["A type of memory that appears to exist as main storage", "A type of memory that is faster than RAM", "A type of memory that is used for caching", "None of the above"],
       "correctAnswer": "A type of memory that appears to exist as main storage",
       "points": 1,
-    "maxAttempts": 1,
-    "questionType": "single"
-    },
-    {
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
       "questionText": "What is a kernel in an operating system?",
       "options": ["The core component of the operating system", "A type of user interface", "A type of application software", "None of the above"],
       "correctAnswer": "The core component of the operating system",
       "points": 1,
-    "maxAttempts": 1,
-    "questionType": "single"
-    },
-    {
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
       "questionText": "Which of the following is a real-time operating system?",
       "options": ["Windows", "Linux", "RTOS", "MacOS"],
       "correctAnswer": "RTOS",
       "points": 1,
-    "maxAttempts": 1,
-    "questionType": "single"
-    },
-    {
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
       "questionText": "What is the purpose of a file system?",
       "options": ["To manage files and directories", "To manage user accounts", "To manage network connections", "To manage hardware devices"],
       "correctAnswer": "To manage files and directories",
       "points": 1,
-    "maxAttempts": 1,
-    "questionType": "single"
-    },
-    {
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
       "questionText": "What is a thread in an operating system?",
       "options": ["A lightweight process", "A type of user interface", "A type of application software", "None of the above"],
       "correctAnswer": "A lightweight process",
       "points": 1,
-    "maxAttempts": 1,
-    "questionType": "single"
-    },
-    {
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
       "questionText": "What is the function of a scheduler in an operating system?",
       "options": ["To manage the execution of processes", "To manage user accounts", "To manage network connections", "To manage hardware devices"],
       "correctAnswer": "To manage the execution of processes",
       "points": 1,
-    "maxAttempts": 1,
-    "questionType": "single"
-    },
-    {
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
       "questionText": "What is a deadlock in an operating system?",
       "options": ["A situation where processes are unable to proceed", "A type of user interface", "A type of application software", "None of the above"],
       "correctAnswer": "A situation where processes are unable to proceed",
       "points": 1,
-    "maxAttempts": 1,
-    "questionType": "single"
-    },
-    {
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
       "questionText": "What is the purpose of an interrupt in an operating system?",
       "options": ["To handle events that require immediate attention", "To manage user accounts", "To manage network connections", "To manage hardware devices"],
       "correctAnswer": "To handle events that require immediate attention",
       "points": 1,
-    "maxAttempts": 1,
-    "questionType": "single"
-    },
-    {
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
       "questionText": "What is the function of a memory manager in an operating system?",
       "options": ["To manage the allocation and deallocation of memory", "To manage user accounts", "To manage network connections", "To manage hardware devices"],
       "correctAnswer": "To manage the allocation and deallocation of memory",
       "points": 1,
-    "maxAttempts": 1,
-    "questionType": "single"
-    },
-    {
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
       "questionText": "What is a context switch in an operating system?",
       "options": ["The process of switching from one process to another", "A type of user interface", "A type of application software", "None of the above"],
       "correctAnswer": "The process of switching from one process to another",
       "points": 1,
-    "maxAttempts": 1,
-    "questionType": "single"
-    },
-    {
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
       "questionText": "What is the purpose of a system call in an operating system?",
       "options": ["To request services from the kernel", "To manage user accounts", "To manage network connections", "To manage hardware devices"],
       "correctAnswer": "To request services from the kernel",
       "points": 1,
-    "maxAttempts": 1,
-    "questionType": "single"
-    },
-    {
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
       "questionText": "What is a semaphore in an operating system?",
       "options": ["A synchronization tool", "A type of user interface", "A type of application software", "None of the above"],
       "correctAnswer": "A synchronization tool",
       "points": 1,
-    "maxAttempts": 1,
-    "questionType": "single"
-    },
-    {
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
       "questionText": "What is the function of a bootloader in an operating system?",
       "options": ["To load the operating system into memory", "To manage user accounts", "To manage network connections", "To manage hardware devices"],
       "correctAnswer": "To load the operating system into memory",
       "points": 1,
-    "maxAttempts": 1,
-    "questionType": "single"
-    },
-    {
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
       "questionText": "What is the purpose of a swap space in an operating system?",
       "options": ["To extend the virtual memory", "To manage user accounts", "To manage network connections", "To manage hardware devices"],
       "correctAnswer": "To extend the virtual memory",
       "points": 1,
-    "maxAttempts": 1,
-    "questionType": "single"
-    },
-    {
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
       "questionText": "What is the function of a shell in an operating system?",
       "options": ["To provide a user interface to the operating system", "To manage user accounts", "To manage network connections", "To manage hardware devices"],
       "correctAnswer": "To provide a user interface to the operating system",
       "points": 1,
-    "maxAttempts": 1,
-    "questionType": "single"
-    },
-    {
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
       "questionText": "What is the difference between a process and a thread?",
       "options": ["A process is a program in execution, while a thread is a lightweight process", "A thread is a program in execution, while a process is a lightweight process", "Both are the same", "None of the above"],
       "correctAnswer": "A process is a program in execution, while a thread is a lightweight process",
       "points": 1,
-    "maxAttempts": 1,
-    "questionType": "single"
-    },
-    {
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
       "questionText": "What is the purpose of a page table in an operating system?",
       "options": ["To map virtual addresses to physical addresses", "To manage user accounts", "To manage network connections", "To manage hardware devices"],
       "correctAnswer": "To map virtual addresses to physical addresses",
       "points": 1,
-    "maxAttempts": 1,
-    "questionType": "single"
-    },
-    {
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
       "questionText": "What is the function of a system monitor in an operating system?",
       "options": ["To monitor system performance and resource usage", "To manage user accounts", "To manage network connections", "To manage hardware devices"],
       "correctAnswer": "To monitor system performance and resource usage",
       "points": 1,
-    "maxAttempts": 1,
-    "questionType": "single"
-    },
-    {
-      "questionText": "What is the purpose of a command interpreter in an operating system?",
-      "options": ["To interpret and execute user commands", "To manage user accounts", "To manage network connections", "To manage hardware devices"],
-      "correctAnswer": "To interpret and execute user commands",
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
+      "questionText": "What is the role of an operating system in networking?",
+      "options": ["To manage network connections and communication", "To manage user accounts", "To manage hardware devices", "To manage applications"],
+      "correctAnswer": "To manage network connections and communication",
       "points": 1,
-    "maxAttempts": 1,
-    "questionType": "single"
-    },
-    {
-      "questionText": "What is the difference between a hard link and a soft link in a file system?",
-      "options": ["A hard link points directly to the file, while a soft link points to the file name", "A soft link points directly to the file, while a hard link points to the file name", "Both are the same", "None of the above"],
-      "correctAnswer": "A hard link points directly to the file, while a soft link points to the file name",
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
+      "questionText": "What is a network operating system?",
+      "options": ["An operating system that supports networking capabilities", "An operating system that runs on a single computer", "An operating system that is used for mobile devices", "None of the above"],
+      "correctAnswer": "An operating system that supports networking capabilities",
       "points": 1,
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
+      "questionText": "What is the purpose of an application programming interface (API) in an operating system?",
+      "options": ["To allow applications to interact with the operating system", "To manage user accounts", "To manage network connections", "To manage hardware devices"],
+      "correctAnswer": "To allow applications to interact with the operating system",
+      "points": 1,
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
+    "questionText": "What is the primary role of the command line interface (CLI) in an operating system?",
+    "options": ["To provide a graphical user interface", "To allow users to enter commands directly", "To manage hardware devices", "To create applications"],
+    "correctAnswer": "To allow users to enter commands directly",
+    "points": 1,
     "maxAttempts": 1,
     "questionType": "single"
-    }
-  ]
+  },
+  {
+      "questionText": "Which of the following file systems is commonly used by Linux operating systems?",
+      "options": ["/NTFS", "/FAT32", "/EXT4", "/HFS"],
+      "correctAnswer": "/EXT4",
+      "points": 1,
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
+      "questionText": "What is a microkernel?",
+      "options": ["An operating system architecture that minimizes the core functions", "A type of application software", "A type of user interface", "None of the above"],
+      "correctAnswer": "An operating system architecture that minimizes the core functions",
+      "points": 1,
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
+      "questionText": "What does the term 'bootstrapping' refer to in computing?",
+      "options": ["The process of starting a computer and loading the operating system", "The process of shutting down a computer", "The process of managing memory", "None of the above"],
+      "correctAnswer": "The process of starting a computer and loading the operating system",
+      "points": 1,
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
+      "questionText": "What is the purpose of system utilities in an operating system?",
+      "options": ["To perform maintenance tasks", "To manage user accounts", "To manage network connections", "To manage hardware devices"],
+      "correctAnswer": "To perform maintenance tasks",
+      "points": 1,
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
+      "questionText": "What is a file descriptor?",
+      "options": ["An abstract indicator for accessing a file", "A physical file on disk", "A type of memory allocation", "None of the above"],
+      "correctAnswer": "An abstract indicator for accessing a file",
+      "points": 1,
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
+      "questionText": "What is the difference between symmetric and asymmetric multiprocessing?",
+      "options": ["In symmetric, all processors share the same memory; in asymmetric, they do not", "In symmetric, only one processor is used; in asymmetric, multiple processors are used", "There is no difference", "Both use the same memory model"],
+      "correctAnswer": "In symmetric, all processors share the same memory; in asymmetric, they do not",
+      "points": 1,
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
+      "questionText": "What is the purpose of a cron job in Unix-like operating systems?",
+      "options": ["To schedule tasks to run at specific intervals", "To manage user accounts", "To monitor system performance", "To manage hardware devices"],
+      "correctAnswer": "To schedule tasks to run at specific intervals",
+      "points": 1,
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
+      "questionText": "What is a zombie process?",
+      "options": ["A process that has completed execution but still has an entry in the process table", "A process that is currently running", "A process that is waiting for a resource", "None of the above"],
+      "correctAnswer": "A process that has completed execution but still has an entry in the process table",
+      "points": 1,
+      "maxAttempts": 1,
+      "questionType": "single"
+  },
+  {
+      "questionText": "What is the main advantage of using a GUI over a CLI?",
+      "options": ["It is more intuitive and easier for most users", "It allows for faster execution of commands", "It requires less memory", "None of the above"],
+      "correctAnswer": "It is more intuitive and easier for most users",
+      "points": 1,
+      "maxAttempts": 1,
+      "questionType": "single"
+  }
+]
