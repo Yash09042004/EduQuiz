@@ -5,6 +5,13 @@ import { COL_QUES } from '../utils/decls';
 import { QuesType } from '../utils/shared';
 import { User } from './user';
 
+export function shuffle(array: any[]) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
 export interface Question extends WithOID {
     text?:        string,
     points?:      number,
@@ -251,33 +258,35 @@ export class ExamOps {
     }
 
     static async getQuestions(examID: ObjectId, showCorrects: boolean): Promise<Result<Question[]>> {
-        const project : { [key: string]: number } = {
-            madeBy:      0, title:       0,
+        const project: { [key: string]: number } = {
+            madeBy: 0, title: 0,
             description: 0, windowStart: 0,
-            windowEnd:   0, duration:    0,
-            clampTime:   0, showScores:  0
+            windowEnd: 0, duration: 0,
+            clampTime: 0, showScores: 0
         };
-        if(!showCorrects) {
-            project["questions.correct"] = 0;
+        if (!showCorrects) {
+            project["questions.correct"] = 0; // Hide correct answers if not showing them
         }
         try {
             const res = await DBCon.colls[COL_QUES].findOne(
                 { _id: examID },
-                { projection: project }
+                { projection: { questions: 1 } } // Only fetch the questions field
             );
-
-            if(res === null) {
+        
+            if (res === null) {
                 return Result.failure<Question[]>("Exam not found").setExtra(404);
-            } else {
+            }else {
                 const exam = res as Exam;
-                return Result.success<Question[]>(exam.questions || []);
+                const shuffledQuestions = shuffle(exam.questions || []);
+                const selectedQuestions = shuffledQuestions.slice(0, 10);
+                return Result.success<Question[]>(selectedQuestions);
             }
-        } catch(e) {
+        } catch (e) {
             console.error(e);
             return Result.failure<Question[]>("Failed to get questions").setExtra(500);
-        }
+        }        
     }
-
+    
     static async canAddDelQuestions(examID: ObjectId): Promise<Result<boolean>> {
         try {
             const res = await DBCon.colls[COL_QUES].findOne(
