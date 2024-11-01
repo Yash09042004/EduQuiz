@@ -17,6 +17,7 @@ REPO_DIR="EduQuiz"
 echo "Cloning the repository..."
 git clone $REPO_URL
 
+
 # Change directory to the cloned repository
 cd $REPO_DIR || exit
 
