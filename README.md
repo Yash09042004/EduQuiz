@@ -30,7 +30,7 @@ EduQuiz is a MERN-stack application designed to simplify remote MCQ-based exams.
 
 ## Installation and Starting Guide
 
-To get started with EduQuiz on your local machine, an all-in-one setup script is available on our [EduQuiz Demo Website](https://your-demo-website.com). This script handles everything from cloning the repository to running the application.
+To get started with EduQuiz on your local machine, an all-in-one setup script is available on our [EduQuiz Demo Website](https://lr7garmi.github.io/MiniProject2_Website/). This script handles everything from cloning the repository to running the application.
 
 ### Running the Setup Script
 
