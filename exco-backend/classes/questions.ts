@@ -1,15 +1,27 @@
 import { ObjectId, PushOperator } from 'mongodb';
+import seedrandom from 'seedrandom';
 import { WithOID, Result } from '../utils/common';
 import { DBCon } from '../utils/db';
 import { COL_QUES } from '../utils/decls';
 import { QuesType } from '../utils/shared';
 import { User } from './user';
 
-export function shuffle(array: any[]) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+function seededShuffle(array: Question[], seed: string): Question[] {
+    const seedRandom = seedrandom(seed); // Create seeded random generator
+
+    let currentIndex = array.length; // Initialize currentIndex to the length of the array
+
+    // While there remain elements to shuffle.
+    while (currentIndex !== 0) {
+        // Pick a remaining element.
+        const randomIndex = Math.floor(seedRandom() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
     }
+
     return array;
 }
 export interface Question extends WithOID {
@@ -257,35 +269,40 @@ export class ExamOps {
         }
     }
 
-    static async getQuestions(examID: ObjectId, showCorrects: boolean): Promise<Result<Question[]>> {
-        const project: { [key: string]: number } = {
-            madeBy: 0, title: 0,
-            description: 0, windowStart: 0,
-            windowEnd: 0, duration: 0,
-            clampTime: 0, showScores: 0
-        };
-        if (!showCorrects) {
-            project["questions.correct"] = 0; // Hide correct answers if not showing them
+    // Modify the getRandomQuestions method to return 2 questions
+static async getRandomQuestions(examID: ObjectId, studentID: ObjectId): Promise<Result<Question[]>> {
+    const project: { [key: string]: number } = {
+        madeBy: 0, title: 0,
+        description: 0, windowStart: 0,
+        windowEnd: 0, duration: 0,
+        clampTime: 0, showScores: 0
+    };
+    try {
+        // Fetch the exam questions
+        const res = await DBCon.colls[COL_QUES].findOne(
+            { _id: examID },
+            { projection: { questions: 1 } } // Only fetch the questions field
+        );
+    
+        if (res === null) {
+            return Result.failure<Question[]>("Exam not found").setExtra(404);
+        } else {
+            const exam = res as Exam;
+            const totalQuestions = exam.questions || [];
+
+            // Shuffle and select 2 questions
+            const shuffledQuestions = seededShuffle(totalQuestions, studentID.toHexString()); // Shuffle questions randomly
+            const selectedQuestions = shuffledQuestions.slice(0, 2); // Select only 2
+
+            // Return only the selected 2 questions
+            return Result.success<Question[]>(selectedQuestions);
         }
-        try {
-            const res = await DBCon.colls[COL_QUES].findOne(
-                { _id: examID },
-                { projection: { questions: 1 } } // Only fetch the questions field
-            );
-        
-            if (res === null) {
-                return Result.failure<Question[]>("Exam not found").setExtra(404);
-            }else {
-                const exam = res as Exam;
-                const shuffledQuestions = shuffle(exam.questions || []);
-                const selectedQuestions = shuffledQuestions.slice(0, 10);
-                return Result.success<Question[]>(selectedQuestions);
-            }
-        } catch (e) {
-            console.error(e);
-            return Result.failure<Question[]>("Failed to get questions").setExtra(500);
-        }        
+    } catch (e) {
+        console.error(e);
+        return Result.failure<Question[]>("Failed to get questions").setExtra(500);
     }
+}
+
     
     static async canAddDelQuestions(examID: ObjectId): Promise<Result<boolean>> {
         try {
@@ -389,7 +406,7 @@ export class QuestionOps {
         ques.correct.sort((a, b) => a - b);
 
         try {
-            let insertable : Question | PushOperator<Question> = ques;
+            let insertable: PushOperator<Question> = { $each: [ques] };
             if(index !== undefined) {
                 insertable = { $each: [ques], $position: index };
             }
@@ -397,7 +414,7 @@ export class QuestionOps {
             // update only if madeBy matches authorID
             const res = await DBCon.colls[COL_QUES].updateOne(
                 { _id: examID, madeBy: authorID },
-                { $push: { questions: insertable } }
+                { $push: { questions: insertable as any } }
             );
 
             if(res.matchedCount === 0) {
@@ -472,7 +489,7 @@ export class QuestionOps {
             // update only if madeBy matches authorID
             const res = await DBCon.colls[COL_QUES].updateOne(
                 { _id: examID, madeBy: authorID },
-                { $pull: { questions: { _id: quesID } } }
+                { $pull: { questions: { _id: quesID } as any } }
             );
 
             if(res.matchedCount === 0) {

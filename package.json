@@ -10,12 +10,14 @@
     "react-markdown": "^9.0.1",
     "react-router-dom": "^6.27.0",
     "remark-gfm": "^4.0.0",
+    "seedrandom": "^3.0.5",
     "uuid": "^10.0.0"
   },
   "devDependencies": {
     "@types/antd": "^1.0.0",
     "@types/node": "^22.7.5",
     "@types/react-router-dom": "^5.3.3",
+    "@types/seedrandom": "^3.0.8",
     "@types/uuid": "^10.0.0"
   }
 }

@@ -248,7 +248,7 @@ export class AnswerService {
             showScores  = examOBJ.showScores  as boolean;
 
             if(showQues(dlvState, showScores)) {
-                const _ques = await ExamOps.getQuestions(examID, showScores);
+                const _ques = await ExamOps.getRandomQuestions(examID, new ObjectId(userID));
                 if(!_ques.ok) return _ques;
                 questions = _ques.data;
 
