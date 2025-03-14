@@ -1,4 +1,4 @@
-# EduQuiz - Remote Exam Platform
+# EduQuiz - Self-Hosted Exam Platform
 
 ![logo](https://github.com/user-attachments/assets/88b1010b-b45c-4b61-adc2-17091a1e0494)
 
