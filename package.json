@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "update-ip": "python3 update_env.py",
+  },
   "dependencies": {
     "@codemirror/language-data": "^6.5.1",
     "@types/mongodb": "^4.0.7",

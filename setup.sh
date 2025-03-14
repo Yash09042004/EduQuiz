@@ -60,10 +60,12 @@ fi
 
 # ----------------------------------------------------------------------------
 # Update the IP address in the .env file
+sudo 
 # ----------------------------------------------------------------------------
 
 # Get the IP address of the connected wireless network
-IP_ADDRESS=$(ip addr show wlo1 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
+INTERFACE=$(ip route | grep default | awk '{print $5}')
+IP_ADDRESS=$(ip addr show "$INTERFACE" | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
 
 # Check if IP_ADDRESS is not empty
 if [ -z "$IP_ADDRESS" ]; then
